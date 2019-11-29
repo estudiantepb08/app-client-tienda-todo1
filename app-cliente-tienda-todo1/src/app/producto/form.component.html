@@ -1,0 +1,37 @@
+<mat-card class="example-container">
+    <mat-card-header>
+        <mat-card-title>{{titulo}}</mat-card-title>
+    </mat-card-header>
+    <mat-dialog-content>
+
+        <form class="frm-crear">
+            <mat-form-field>
+                <mat-select name="tipoProductoId" #tipoProductoId="ngModel" placeholder="Tipo Producto" [(ngModel)]="producto.tipoProductoId" required>
+                    <mat-option *ngFor="let item of tipoProductos" [value]="item.id">
+                        {{item.nombreProducto}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <br>
+            <mat-form-field style="width:400px !important">
+                <input matInput type="number" name="cantidad" placeholder="Cantidad" [(ngModel)]="producto.cantidad" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput type="text" name="color" placeholder="Color" [(ngModel)]="producto.color" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput type="text" name="talla" placeholder="Talla" [(ngModel)]="producto.talla">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput type="text" name="estado" placeholder="Estado" [(ngModel)]="producto.estado" required>
+            </mat-form-field>
+        </form>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-raised-button color="accent" (click)="onCreate()">Crear</button>
+        <button mat-raised-button color="accent" [mat-dialog-close]="true">Cerrar</button>
+    </mat-dialog-actions>
+</mat-card>

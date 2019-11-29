@@ -1,0 +1,17 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.example-container>* {
+    width: 100%;
+}
+
+.mat-form-field {
+    width: 400px !important;
+}
+
+.mat-raised-button {
+    width: 100% !important;
+    margin: 5px;
+}
